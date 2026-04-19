@@ -5,6 +5,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-l);
   overflow: hidden;
+  box-shadow: var(--shadow-s);
 }
 
 /* ── Image ────────────────────────────────────── */
@@ -49,13 +50,13 @@
 
 .metaRow { display: flex; align-items: center; gap: 8px; }
 .badge {
-  font-family: 'DM Mono', monospace;
   font-size: 11px;
-  padding: 3px 9px;
+  font-weight: 600;
+  padding: 3px 10px;
   border-radius: 100px;
-  background: var(--surface2);
-  border: 1px solid var(--border2);
-  color: var(--text-3);
+  background: var(--accent-dim);
+  border: 1px solid rgba(91,106,240,.25);
+  color: var(--accent);
 }
 
 .name {
@@ -89,43 +90,44 @@
 }
 
 .editBtn, .backBtn {
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: var(--radius-m);
   font-size: 14px;
   font-weight: 600;
-  transition: background var(--transition), border-color var(--transition);
-  border: 1px solid var(--border);
+  transition: opacity var(--transition), transform var(--transition), background var(--transition);
+  border: 1px solid var(--border2);
 }
 .editBtn {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--grad-accent);
+  border-color: transparent;
   color: #fff;
+  box-shadow: 0 4px 14px rgba(91,106,240,.3);
 }
-.editBtn:hover { background: var(--accent-h); border-color: var(--accent-h); }
+.editBtn:hover { opacity: .9; transform: translateY(-1px); }
 .backBtn {
   background: var(--surface2);
   color: var(--text-2);
 }
-.backBtn:hover { background: var(--border); color: var(--text); }
+.backBtn:hover { background: var(--surface3); color: var(--text); }
 
 /* ── Skeleton ─────────────────────────────────── */
 @keyframes shimmer {
-  0%   { opacity: .35; }
-  50%  { opacity: .7; }
-  100% { opacity: .35; }
+  0%   { opacity: .3; }
+  50%  { opacity: .6; }
+  100% { opacity: .3; }
 }
 .skelImg {
   width: 100%;
   height: 280px;
   background: var(--surface2);
-  animation: shimmer 1.4s ease-in-out infinite;
+  animation: shimmer 1.5s ease-in-out infinite;
   border-bottom: 1px solid var(--border);
 }
 .skelLine {
   height: 16px;
   border-radius: 6px;
   background: var(--surface2);
-  animation: shimmer 1.4s ease-in-out infinite;
+  animation: shimmer 1.5s ease-in-out infinite;
 }
 
 .errorBox {

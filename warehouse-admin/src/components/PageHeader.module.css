@@ -3,16 +3,17 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .left { display: flex; flex-direction: column; gap: 6px; }
 
 .backBtn {
   align-self: flex-start;
+  display: flex; align-items: center; gap: 5px;
   background: none;
   border: none;
-  color: var(--text-2);
+  color: var(--text-3);
   font-size: 13px;
   font-weight: 500;
   padding: 0;
@@ -24,7 +25,7 @@
 .title {
   font-size: 24px;
   font-weight: 700;
-  letter-spacing: -.4px;
+  letter-spacing: -.5px;
   color: var(--text);
   line-height: 1.2;
 }
@@ -32,22 +33,23 @@
 .subtitle {
   font-size: 14px;
   color: var(--text-2);
-  margin-top: 2px;
 }
 
 .actionBtn {
-  padding: 10px 20px;
-  background: var(--accent);
+  padding: 10px 22px;
+  background: var(--grad-accent);
   border: none;
   border-radius: var(--radius-m);
   color: #fff;
   font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
-  transition: background var(--transition);
+  transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 14px rgba(91,106,240,.3);
   flex-shrink: 0;
 }
-.actionBtn:hover { background: var(--accent-h); }
+.actionBtn:hover { opacity: .9; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(91,106,240,.4); }
+.actionBtn:active { transform: translateY(0); }
 
 @media (max-width: 500px) {
   .header { flex-direction: column; }

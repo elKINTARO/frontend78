@@ -5,6 +5,16 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-l);
   overflow: hidden;
+  box-shadow: var(--shadow-s);
+  position: relative;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--grad-accent);
+  z-index: 1;
 }
 
 .cardBody { padding: 28px 32px; display: flex; flex-direction: column; gap: 24px; }
@@ -13,17 +23,18 @@
 .photoSection { display: flex; flex-direction: column; gap: 10px; }
 
 .fieldLabel {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--text-2);
-  letter-spacing: .02em;
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
-.optional { color: var(--text-3); font-weight: 400; }
+.optional { color: var(--text-3); font-weight: 400; text-transform: none; letter-spacing: 0; }
 
 .dropzone {
   border: 2px dashed var(--border2);
   border-radius: var(--radius-l);
-  min-height: 140px;
+  min-height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,22 +50,18 @@
 
 .photoPreview {
   max-width: 100%;
-  max-height: 200px;
+  max-height: 220px;
   object-fit: contain;
   display: block;
 }
 
-.dropPlaceholder { text-align: center; padding: 16px; }
-.dropIcon { font-size: 30px; display: block; margin-bottom: 8px; }
+.dropPlaceholder { text-align: center; padding: 20px; }
+.dropIcon { font-size: 30px; display: block; margin-bottom: 10px; }
 .dropPlaceholder p { font-size: 14px; color: var(--text-2); }
 .link { color: var(--accent); font-weight: 600; }
 .hint { font-size: 12px; color: var(--text-3); margin-top: 4px; }
 
-.fileName {
-  font-size: 12px;
-  color: var(--text-3);
-  font-family: 'DM Mono', monospace;
-}
+.fileName { font-size: 12px; color: var(--text-3); }
 
 /* ── Divider ──────────────────────────────────── */
 .divider {
@@ -66,9 +73,11 @@
 /* ── Section ──────────────────────────────────── */
 .section { display: flex; flex-direction: column; gap: 16px; }
 .sectionTitle {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  letter-spacing: .06em;
+  text-transform: uppercase;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
 }
@@ -79,8 +88,8 @@
   align-items: center;
   gap: 8px;
   padding: 12px 16px;
-  background: rgba(61, 219, 160, .12);
-  border: 1px solid var(--success);
+  background: var(--success-dim);
+  border: 1px solid rgba(62,207,160,.3);
   border-radius: var(--radius-m);
   color: var(--success);
   font-size: 14px;

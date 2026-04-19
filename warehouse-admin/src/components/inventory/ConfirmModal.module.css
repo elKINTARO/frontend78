@@ -1,8 +1,8 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .65);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, .72);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,21 +11,29 @@
 }
 
 @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
-@keyframes slideUp { from { opacity: 0; transform: translateY(16px) } to { opacity: 1; transform: none } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px) } to { opacity: 1; transform: none } }
 
 .modal {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-l);
-  padding: 32px 36px;
+  border-radius: var(--radius-xl);
+  padding: 36px 40px;
   max-width: 420px;
   width: 90%;
   text-align: center;
-  box-shadow: var(--shadow-m);
-  animation: slideUp .18s cubic-bezier(.4,0,.2,1);
+  box-shadow: var(--shadow-l);
+  animation: slideUp .2s cubic-bezier(.4,0,.2,1);
 }
 
-.icon { font-size: 36px; margin-bottom: 12px; }
+.icon {
+  width: 64px; height: 64px;
+  background: var(--danger-dim);
+  border: 1px solid rgba(240,91,122,.2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  margin: 0 auto 16px;
+}
 .title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
 .message { font-size: 14px; color: var(--text-2); line-height: 1.6; margin-bottom: 8px; }
 .error { font-size: 13px; color: var(--danger); margin-bottom: 8px; }
@@ -38,30 +46,31 @@
 }
 
 .cancel, .confirm {
-  padding: 10px 24px;
+  padding: 11px 24px;
   border-radius: var(--radius-m);
   font-size: 14px;
   font-weight: 600;
-  min-width: 110px;
+  min-width: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background var(--transition), opacity var(--transition);
-  border: 1px solid var(--border);
+  transition: background var(--transition), opacity var(--transition), transform var(--transition);
+  border: 1px solid var(--border2);
 }
 
 .cancel {
   background: var(--surface2);
-  color: var(--text);
+  color: var(--text-2);
 }
-.cancel:hover:not(:disabled) { background: var(--border); }
+.cancel:hover:not(:disabled) { background: var(--surface3); color: var(--text); }
 
 .confirm {
   background: var(--danger);
   border-color: var(--danger);
   color: #fff;
 }
-.confirm:hover:not(:disabled) { filter: brightness(1.15); }
+.confirm:hover:not(:disabled) { filter: brightness(1.12); transform: translateY(-1px); }
+.confirm:active { transform: translateY(0); }
 .cancel:disabled, .confirm:disabled { opacity: .5; cursor: not-allowed; }
 
 @keyframes spin { to { transform: rotate(360deg); } }

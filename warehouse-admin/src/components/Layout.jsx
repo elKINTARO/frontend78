@@ -10,7 +10,7 @@ export default function Layout() {
     <div className={styles.shell}>
       <aside className={styles.sidebar}>
         <div className={styles.brand}>
-          <span className={styles.brandIcon}>🏭</span>
+          <div className={styles.brandIcon}>🏭</div>
           <div>
             <div className={styles.brandName}>Warehouse</div>
             <div className={styles.brandSub}>Admin Panel</div>

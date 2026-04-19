@@ -6,7 +6,7 @@
   gap: 8px;
   padding: 12px 16px;
   background: var(--danger-dim);
-  border: 1px solid var(--danger);
+  border: 1px solid rgba(240,91,122,.3);
   border-radius: var(--radius-m);
   color: var(--danger);
   font-size: 14px;
@@ -15,10 +15,11 @@
 .field { display: flex; flex-direction: column; gap: 6px; }
 
 .label {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--text-2);
-  letter-spacing: .02em;
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
 .required { color: var(--danger); }
 
@@ -31,38 +32,42 @@
   color: var(--text);
   font-size: 14px;
   outline: none;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
   resize: vertical;
   width: 100%;
 }
+.input:hover:not(:disabled),
+.textarea:hover:not(:disabled) { background: var(--surface3); }
 .input:focus,
 .textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(79, 124, 255, .15);
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
-.inputError { border-color: var(--danger) !important; }
-.input:disabled, .textarea:disabled { opacity: .55; cursor: not-allowed; }
+.inputError { border-color: var(--danger) !important; box-shadow: 0 0 0 3px rgba(240,91,122,.15) !important; }
+.input:disabled, .textarea:disabled { opacity: .5; cursor: not-allowed; }
 
 .fieldError { font-size: 12px; color: var(--danger); }
 
 .submitBtn {
   align-self: flex-start;
-  padding: 10px 28px;
-  background: var(--accent);
+  padding: 11px 28px;
+  background: var(--grad-accent);
   border: none;
   border-radius: var(--radius-m);
   color: #fff;
   font-size: 14px;
   font-weight: 600;
-  transition: background var(--transition), opacity var(--transition);
+  transition: opacity var(--transition), transform var(--transition), box-shadow var(--transition);
   display: flex;
   align-items: center;
   gap: 8px;
-  min-width: 120px;
+  min-width: 130px;
   justify-content: center;
+  box-shadow: 0 4px 14px rgba(91,106,240,.3);
 }
-.submitBtn:hover:not(:disabled) { background: var(--accent-h); }
-.submitBtn:disabled { opacity: .6; cursor: not-allowed; }
+.submitBtn:hover:not(:disabled) { opacity: .9; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(91,106,240,.4); }
+.submitBtn:active { transform: translateY(0); }
+.submitBtn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 .spinner {
