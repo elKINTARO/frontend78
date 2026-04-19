@@ -1,0 +1,92 @@
+.page { max-width: 600px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+}
+
+.cardBody { padding: 28px 32px; display: flex; flex-direction: column; gap: 24px; }
+
+/* ── Photo section ────────────────────────────── */
+.photoSection { display: flex; flex-direction: column; gap: 10px; }
+
+.fieldLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-2);
+  letter-spacing: .02em;
+}
+.optional { color: var(--text-3); font-weight: 400; }
+
+.dropzone {
+  border: 2px dashed var(--border2);
+  border-radius: var(--radius-l);
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--surface2);
+  transition: border-color var(--transition), background var(--transition);
+  overflow: hidden;
+}
+.dropzone:hover, .drag {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.photoPreview {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  display: block;
+}
+
+.dropPlaceholder { text-align: center; padding: 16px; }
+.dropIcon { font-size: 30px; display: block; margin-bottom: 8px; }
+.dropPlaceholder p { font-size: 14px; color: var(--text-2); }
+.link { color: var(--accent); font-weight: 600; }
+.hint { font-size: 12px; color: var(--text-3); margin-top: 4px; }
+
+.fileName {
+  font-size: 12px;
+  color: var(--text-3);
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── Divider ──────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 -32px;
+}
+
+/* ── Section ──────────────────────────────────── */
+.section { display: flex; flex-direction: column; gap: 16px; }
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Success toast ────────────────────────────── */
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(61, 219, 160, .12);
+  border: 1px solid var(--success);
+  border-radius: var(--radius-m);
+  color: var(--success);
+  font-size: 14px;
+}
+
+@media (max-width: 500px) {
+  .cardBody { padding: 20px 18px; }
+  .divider { margin: 0 -18px; }
+}

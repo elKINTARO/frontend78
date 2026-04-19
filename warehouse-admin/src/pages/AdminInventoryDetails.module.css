@@ -1,0 +1,145 @@
+.page { max-width: 600px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+}
+
+/* ── Image ────────────────────────────────────── */
+.imageWrap {
+  width: 100%;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  max-height: 380px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.imageFallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 48px;
+  color: var(--text-3);
+}
+.imageFallback span { font-size: 48px; }
+.imageFallback p { font-size: 14px; }
+
+/* ── Body ─────────────────────────────────────── */
+.cardBody {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.metaRow { display: flex; align-items: center; gap: 8px; }
+.badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 100px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--text-3);
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -.3px;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.divider { height: 1px; background: var(--border); }
+
+/* ── Description ──────────────────────────────── */
+.descSection { display: flex; flex-direction: column; gap: 6px; }
+.descLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.desc { font-size: 14px; color: var(--text-2); line-height: 1.7; }
+.noDesc { color: var(--text-3); font-style: italic; }
+
+/* ── Actions ──────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.editBtn, .backBtn {
+  padding: 10px 20px;
+  border-radius: var(--radius-m);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background var(--transition), border-color var(--transition);
+  border: 1px solid var(--border);
+}
+.editBtn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.editBtn:hover { background: var(--accent-h); border-color: var(--accent-h); }
+.backBtn {
+  background: var(--surface2);
+  color: var(--text-2);
+}
+.backBtn:hover { background: var(--border); color: var(--text); }
+
+/* ── Skeleton ─────────────────────────────────── */
+@keyframes shimmer {
+  0%   { opacity: .35; }
+  50%  { opacity: .7; }
+  100% { opacity: .35; }
+}
+.skelImg {
+  width: 100%;
+  height: 280px;
+  background: var(--surface2);
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-bottom: 1px solid var(--border);
+}
+.skelLine {
+  height: 16px;
+  border-radius: 6px;
+  background: var(--surface2);
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.errorBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  background: var(--danger-dim);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius-m);
+  color: var(--danger);
+  font-size: 14px;
+}
+
+@media (max-width: 500px) {
+  .cardBody { padding: 20px 18px; }
+}
