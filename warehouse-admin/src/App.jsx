@@ -4,6 +4,8 @@ import AdminInventory from './pages/AdminInventory'
 import AdminInventoryCreate from './pages/AdminInventoryCreate'
 import AdminInventoryEdit from './pages/AdminInventoryEdit'
 import AdminInventoryDetails from './pages/AdminInventoryDetails'
+import Gallery from './pages/Gallery'
+import Favorites from './pages/Favorites'
 import Layout from './components/Layout'
 
 export default function App() {
@@ -12,7 +14,9 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route index element={<Navigate to="/admin/inventory" replace />} />
+            <Route index element={<Navigate to="/gallery" replace />} />
+            <Route path="gallery" element={<Gallery />} />
+            <Route path="favorites" element={<Favorites />} />
             <Route path="admin/inventory" element={<AdminInventory />} />
             <Route path="admin/inventory/create" element={<AdminInventoryCreate />} />
             <Route path="admin/inventory/:id/edit" element={<AdminInventoryEdit />} />
