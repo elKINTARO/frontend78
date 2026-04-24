@@ -1,0 +1,39 @@
+.page {
+  padding: 28px 32px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+/* ── Favorites empty state ─────────────────────────────────────── */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  gap: 12px;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.emptyTitle {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.emptyText {
+  font-size: 0.875rem;
+  color: var(--text-2);
+  max-width: 320px;
+  line-height: 1.6;
+}

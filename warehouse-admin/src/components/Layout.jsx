@@ -2,6 +2,8 @@ import { Outlet, NavLink } from 'react-router-dom'
 import styles from './Layout.module.css'
 
 const NAV = [
+  { to: '/gallery',         label: 'Галерея',  icon: '🎨' },
+  { to: '/favorites',       label: 'Улюблені', icon: '❤️' },
   { to: '/admin/inventory', label: 'Інвентар', icon: '📦' },
 ]
 
@@ -33,7 +35,7 @@ export default function Layout() {
         </nav>
 
         <div className={styles.sidebarFooter}>
-          <span className={styles.versionTag}>v0.1.0 · Lab 7</span>
+          <span className={styles.versionTag}>v0.2.0 · Lab 8</span>
         </div>
       </aside>
 
